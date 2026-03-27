@@ -1,394 +1,135 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>La Poción</title>
-
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(
-        rgba(0, 0, 0, 0.22),
-        rgba(0, 0, 0, 0.22)
-      ), url('images/background.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #3d2a1a;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 70px 20px 50px;
-      color: white;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-    }
-
-    .hero img.logo {
-      max-width: 260px;
-      width: 100%;
-      margin-bottom: 14px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: 46px;
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: 14px auto 0;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      margin-top: 28px;
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn,
-    .btn-outline,
-    .button {
-      display: inline-block;
-      text-decoration: none;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: bold;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    .btn,
-    .button {
-      background: #3d2a1a;
-      color: white;
-    }
-
-    .btn-outline {
-      background: white;
-      color: #3d2a1a;
-      border: 1px solid #e7d8ca;
-    }
-
-    .feature-strip {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 20px 0;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .feature-box {
-      background: rgba(255,255,255,0.94);
-      border-radius: 20px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 50px 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-      margin: 0;
-      font-size: 34px;
-      color: white;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
-    }
-
-    .section-title p {
-      margin: 10px auto 0;
-      max-width: 740px;
-      line-height: 1.7;
-      color: white;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.95);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-body {
-      padding: 20px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 24px;
-    }
-
-    .price {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .desc {
-      margin-bottom: 14px;
-      color: #6d4d38;
-      line-height: 1.6;
-    }
-
-    .button {
-      display: block;
-      margin-top: 10px;
-      width: 100%;
-    }
-
-    .builder-box {
-      background: rgba(255,255,255,0.95);
-      padding: 24px;
-      border-radius: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .ingredients {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .ingredients label {
-      background: #fff4ea;
-      padding: 12px 14px;
-      border-radius: 12px;
-      cursor: pointer;
-      color: #3d2a1a;
-      line-height: 1.4;
-    }
-
-    .ingredients input {
-      margin-right: 8px;
-    }
-
-    .custom-textarea {
-      width: 100%;
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid #ddd;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .builder-button-wrap {
-      margin-top: 18px;
-      text-align: center;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #25D366;
-      color: white;
-      padding: 14px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
-      z-index: 9999;
-    }
-
-    @media (max-width: 860px) {
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
+<main>
+  <!-- HERO -->
   <section class="hero">
-    <img class="logo" src="./logo.png" alt="La Poción logo" />
+    <img src="logo.png" alt="La Poción logo" class="logo" />
     <h1>Jugos que se sienten bien</h1>
     <p>
       La magia está en los ingredientes. Jugos frescos y funcionales para tu bienestar.
     </p>
 
-    <div class="hero-buttons">
-      <a class="btn" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20jugo%20de%20La%20Poci%C3%B3n.">Ordenar por WhatsApp</a>
-      <a class="btn-outline" href="#crear-jugo">Crear mi propio jugo</a>
+    <div class="hero-features">
+      <span>Ingredientes frescos</span>
+      <span>ATH Móvil</span>
+      <span>Envío o recogido</span>
+      <span>Personalización</span>
     </div>
   </section>
 
-  <section class="feature-strip">
-    <div class="feature-grid">
-      <div class="feature-box">Ingredientes frescos</div>
-      <div class="feature-box">ATH Móvil</div>
-      <div class="feature-box">Envío o recogido</div>
-      <div class="feature-box">Personalización</div>
-    </div>
-  </section>
+  <!-- JUGOS DISPONIBLES -->
+  <section id="jugos" class="products-section">
+    <h2>Jugos disponibles</h2>
+    <p class="section-subtitle">Nuestros favoritos de la casa.</p>
 
-  <section class="section">
-    <div class="section-title">
-      <h2>Jugos disponibles</h2>
-      <p>Nuestros favoritos de la casa.</p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <img src="./glow-verde.png" alt="Glow Verde" />
-        <div class="card-body">
-          <h3>Glow Verde</h3>
-          <div class="price">$7</div>
-          <div class="desc">Refrescante y ligero.</div>
-          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Glow%20Verde.">Ordenar</a>
-        </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="images/glow-verde.jpg" alt="Glow Verde" />
+        <h3>Glow Verde</h3>
+        <p class="price">$7</p>
+        <p>Refrescante y ligero.</p>
+        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Glow%20Verde"
+           target="_blank" class="btn-secondary">Ordenar</a>
       </div>
 
-      <div class="card">
-        <img src="./golden-boost.png" alt="Golden Boost" />
-        <div class="card-body">
-          <h3>Golden Boost</h3>
-          <div class="price">$8</div>
-          <div class="desc">Energía natural.</div>
-          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Golden%20Boost.">Ordenar</a>
-        </div>
+      <div class="product-card">
+        <img src="images/golden-boost.jpg" alt="Golden Boost" />
+        <h3>Golden Boost</h3>
+        <p class="price">$8</p>
+        <p>Energía natural.</p>
+        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Golden%20Boost"
+           target="_blank" class="btn-secondary">Ordenar</a>
       </div>
 
-      <div class="card">
-        <img src="./berry-power.png" alt="Berry Power" />
-        <div class="card-body">
-          <h3>Berry Power</h3>
-          <div class="price">$8</div>
-          <div class="desc">Antioxidantes.</div>
-          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Berry%20Power.">Ordenar</a>
-        </div>
+      <div class="product-card">
+        <img src="images/berry-power.jpg" alt="Berry Power" />
+        <h3>Berry Power</h3>
+        <p class="price">$8</p>
+        <p>Antioxidantes.</p>
+        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Berry%20Power"
+           target="_blank" class="btn-secondary">Ordenar</a>
       </div>
 
-      <div class="card">
-        <img src="./tropical.png" alt="Tropical" />
-        <div class="card-body">
-          <h3>Tropical</h3>
-          <div class="price">$7</div>
-          <div class="desc">Suave y refrescante.</div>
-          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Tropical.">Ordenar</a>
-        </div>
+      <div class="product-card">
+        <img src="images/tropical.jpg" alt="Tropical" />
+        <h3>Tropical</h3>
+        <p class="price">$7</p>
+        <p>Suave y refrescante.</p>
+        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Tropical"
+           target="_blank" class="btn-secondary">Ordenar</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="crear-jugo">
-    <div class="section-title">
-      <h2>Crea tu propio jugo</h2>
-      <p>Escoge tus ingredientes favoritos y añade cualquier otra idea en notas.</p>
-    </div>
+  <!-- OPCIONES DE CAJAS -->
+  <section id="cajas" class="boxes-section">
+    <h2>Opciones de cajas</h2>
+    <p class="section-subtitle">Escoge la caja que mejor vaya contigo.</p>
 
-    <div class="builder-box">
-      <div class="ingredients">
-        <label><input type="checkbox" value="Manzana verde"> Manzana verde</label>
-        <label><input type="checkbox" value="Manzana roja"> Manzana roja</label>
-        <label><input type="checkbox" value="Piña"> Piña</label>
-        <label><input type="checkbox" value="Jengibre"> Jengibre</label>
-        <label><input type="checkbox" value="Cúrcuma"> Cúrcuma</label>
-        <label><input type="checkbox" value="Guineo"> Guineo</label>
-        <label><input type="checkbox" value="Zanahoria"> Zanahoria</label>
-        <label><input type="checkbox" value="Celery"> Celery</label>
-        <label><input type="checkbox" value="Ciruela"> Ciruela</label>
-        <label><input type="checkbox" value="Remolacha"> Remolacha</label>
-        <label><input type="checkbox" value="Espinaca"> Espinaca</label>
-        <label><input type="checkbox" value="Pepino"> Pepino</label>
-        <label><input type="checkbox" value="Limón"> Limón</label>
-        <label><input type="checkbox" value="Naranja"> Naranja</label>
-        <label><input type="checkbox" value="Fresas"> Fresas</label>
-        <label><input type="checkbox" value="Mango"> Mango</label>
+    <div class="boxes-grid">
+      <div class="box-card">
+        <img src="images/caja-4.jpg" alt="Caja de 4 jugos" />
+        <h3>Caja de 4</h3>
+        <p>Ideal para probar tus favoritos.</p>
       </div>
 
-      <textarea
-        id="extraIngredientes"
-        class="custom-textarea"
-        placeholder="Otras opciones, combinaciones o notas especiales..."
-      ></textarea>
+      <div class="box-card">
+        <img src="images/caja-7.jpg" alt="Caja de 7 jugos" />
+        <h3>Caja de 7</h3>
+        <p>Perfecta para una semana.</p>
+      </div>
 
-      <div class="builder-button-wrap">
-        <button class="button" onclick="enviarJugoPersonalizado()">Crear mi jugo por WhatsApp</button>
+      <div class="box-card">
+        <img src="images/caja-14.jpg" alt="Caja de 14 jugos" />
+        <h3>Caja de 14</h3>
+        <p>Para mantener tu rutina por más tiempo.</p>
+      </div>
+
+      <div class="box-card">
+        <img src="images/caja-30.jpg" alt="Caja de 30 jugos" />
+        <h3>Caja de 30</h3>
+        <p>La opción completa para todo el mes.</p>
       </div>
     </div>
   </section>
 
-  <a class="whatsapp-float" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20jugo%20de%20La%20Poci%C3%B3n.">Ordenar</a>
+  <!-- CREA TU PROPIO JUGO -->
+  <section id="custom-juice" class="custom-section">
+    <h2>Crea tu propio jugo</h2>
+    <p class="section-subtitle">
+      Escoge tus ingredientes favoritos y añade cualquier otra idea en notas.
+    </p>
 
-  <script>
-    function enviarJugoPersonalizado() {
-      const seleccionados = document.querySelectorAll('.ingredients input[type="checkbox"]:checked');
-      const extra = document.getElementById('extraIngredientes').value.trim();
+    <div class="ingredients-list">
+      <span>Manzana verde</span>
+      <span>Manzana roja</span>
+      <span>Piña</span>
+      <span>Jengibre</span>
+      <span>Cúrcuma</span>
+      <span>Guineo</span>
+      <span>Zanahoria</span>
+      <span>Celery</span>
+      <span>Ciruela</span>
+      <span>Remolacha</span>
+      <span>Espinaca</span>
+      <span>Pepino</span>
+      <span>Limón</span>
+      <span>Naranja</span>
+      <span>Fresas</span>
+      <span>Mango</span>
+    </div>
 
-      let lista = [];
-      seleccionados.forEach(item => {
-        lista.push(item.value);
-      });
+    <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20crear%20mi%20propio%20jugo"
+       target="_blank" class="btn-primary">
+      Crear mi jugo por WhatsApp
+    </a>
+  </section>
 
-      let mensaje = "Hola, quiero crear mi propio jugo.\n\n";
-
-      if (lista.length > 0) {
-        mensaje += "Ingredientes seleccionados:\n- " + lista.join("\n- ") + "\n\n";
-      }
-
-      if (extra !== "") {
-        mensaje += "Otras opciones o notas:\n" + extra + "\n\n";
-      }
-
-      if (lista.length === 0 && extra === "") {
-        mensaje += "Quiero orientación para crear mi mezcla ideal.\n\n";
-      }
-
-      mensaje += "Gracias.";
-
-      const url = "https://wa.me/19398813322?text=" + encodeURIComponent(mensaje);
-      window.open(url, "_blank");
-    }
-  </script>
-
-</body>
-</html>
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <h2>¿Lista para ordenar?</h2>
+    <p>Escríbenos por WhatsApp y te ayudamos a escoger tu mejor opción.</p>
+    <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20jugos%20de%20La%20Poción"
+       target="_blank" class="btn-primary">
+      Ordenar por WhatsApp
+    </a>
+  </section>
+</main>
