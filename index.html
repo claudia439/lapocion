@@ -6,14 +6,16 @@
   <title>La Poción</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(
-        rgba(0,0,0,0.25),
-        rgba(0,0,0,0.25)
+        rgba(0, 0, 0, 0.22),
+        rgba(0, 0, 0, 0.22)
       ), url('images/background.jpg');
       background-size: cover;
       background-position: center;
@@ -26,20 +28,24 @@
       text-align: center;
       padding: 70px 20px 50px;
       color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
     }
 
     .hero img.logo {
       max-width: 260px;
+      width: 100%;
       margin-bottom: 14px;
     }
 
     .hero h1 {
+      margin: 0;
       font-size: 46px;
     }
 
     .hero p {
       max-width: 760px;
       margin: 14px auto 0;
+      font-size: 18px;
       line-height: 1.7;
     }
 
@@ -51,26 +57,50 @@
       flex-wrap: wrap;
     }
 
-    .btn {
+    .btn,
+    .btn-outline {
+      display: inline-block;
+      text-decoration: none;
       padding: 14px 22px;
       border-radius: 14px;
+      font-weight: bold;
+    }
+
+    .btn {
       background: #3d2a1a;
       color: white;
-      text-decoration: none;
     }
 
     .btn-outline {
       background: white;
       color: #3d2a1a;
-      padding: 14px 22px;
-      border-radius: 14px;
-      text-decoration: none;
+      border: 1px solid #e7d8ca;
     }
 
     .section {
-      padding: 50px 20px;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 34px;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
+    }
+
+    .section-title p {
+      margin: 10px auto 0;
+      max-width: 740px;
+      line-height: 1.7;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
     }
 
     .grid {
@@ -80,99 +110,159 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.94);
       border-radius: 24px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.10);
     }
 
     .card img {
       width: 100%;
-      height: 300px;
+      height: 310px;
       object-fit: cover;
+      display: block;
     }
 
     .card-body {
-      padding: 20px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
     }
 
     .price {
+      font-size: 20px;
       font-weight: bold;
-      margin: 10px 0;
+      margin-bottom: 12px;
+    }
+
+    .desc {
+      color: #6d4d38;
+      line-height: 1.6;
+      margin-bottom: 12px;
     }
 
     .button {
-      display: block;
+      display: inline-block;
+      width: 100%;
       text-align: center;
       background: #3d2a1a;
       color: white;
-      padding: 12px;
-      border-radius: 10px;
       text-decoration: none;
-      margin-top: 10px;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: bold;
     }
 
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
       right: 20px;
+      bottom: 20px;
       background: #25D366;
       color: white;
+      text-decoration: none;
       padding: 14px 18px;
       border-radius: 999px;
-      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      z-index: 9999;
+      font-size: 15px;
+    }
+
+    @media (max-width: 860px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
-
 <body>
 
   <section class="hero">
-    <img class="logo" src="./logo.png" />
-    <h1>La Poción</h1>
-    <p>La magia está en los ingredientes ✨</p>
+    <img class="logo" src="./logo.png" alt="La Poción logo" />
+    <h1>Jugos que se sienten bien</h1>
+    <p>
+      La magia está en los ingredientes. Jugos y shots frescos, funcionales y deliciosos,
+      creados para acompañarte en tu rutina de bienestar.
+    </p>
 
     <div class="hero-buttons">
-      <a class="btn" href="#">Ordenar por WhatsApp</a>
-      <a class="btn-outline" href="#">Crear mi jugo</a>
+      <a class="btn" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20jugo%20de%20La%20Poci%C3%B3n.">
+        Ordenar por WhatsApp
+      </a>
+      <a class="btn-outline" href="https://wa.me/19398813322?text=Hola,%20quiero%20crear%20mi%20propio%20jugo.">
+        Crear mi propio jugo
+      </a>
     </div>
   </section>
 
   <section class="section">
-    <h2 style="text-align:center;">Jugos disponibles</h2>
+    <div class="section-title">
+      <h2>Jugos disponibles</h2>
+      <p>Nuestros favoritos de la casa.</p>
+    </div>
 
     <div class="grid">
-
       <div class="card">
-        <img src="./glow-verde.png">
+        <img src="./glow-verde.png" alt="Glow Verde" />
         <div class="card-body">
           <h3>Glow Verde</h3>
           <div class="price">$7</div>
-          <a class="button" href="#">Ordenar</a>
+          <div class="desc">Mezcla refrescante de manzana, celery, pepino y limón.</div>
+          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Glow%20Verde.">
+            Ordenar Glow Verde
+          </a>
         </div>
       </div>
 
       <div class="card">
-        <img src="./golden-boost.png">
+        <img src="./golden-boost.png" alt="Golden Boost" />
         <div class="card-body">
           <h3>Golden Boost</h3>
           <div class="price">$8</div>
-          <a class="button" href="#">Ordenar</a>
+          <div class="desc">Jengibre, piña, cúrcuma y naranja.</div>
+          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Golden%20Boost.">
+            Ordenar Golden Boost
+          </a>
         </div>
       </div>
 
       <div class="card">
-        <img src="./berry-power.png">
+        <img src="./berry-power.png" alt="Berry Power" />
         <div class="card-body">
           <h3>Berry Power</h3>
           <div class="price">$8</div>
-          <a class="button" href="#">Ordenar</a>
+          <div class="desc">Remolacha, berries y zanahoria.</div>
+          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Berry%20Power.">
+            Ordenar Berry Power
+          </a>
         </div>
       </div>
 
+      <div class="card">
+        <img src="./tropical.png" alt="Tropical" />
+        <div class="card-body">
+          <h3>Tropical</h3>
+          <div class="price">$7</div>
+          <div class="desc">Mezcla frutal suave, jugosa y refrescante.</div>
+          <a class="button" href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20Tropical.">
+            Ordenar Tropical
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <a class="whatsapp-float" href="#">Ordenar</a>
+  <a class="whatsapp-float"
+     href="https://wa.me/19398813322?text=Hola,%20quiero%20ordenar%20un%20jugo%20de%20La%20Poci%C3%B3n.">
+    Haz tu pedido
+  </a>
 
 </body>
 </html>
