@@ -1,142 +1,155 @@
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <img src="logo.png" alt="La Poción logo" class="logo" />
-    <h1>Jugos que se sienten bien</h1>
-    <p>
-      La magia está en los ingredientes. Jugos frescos y funcionales para tu bienestar.
-    </p>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <div class="hero-features">
-      <span>Ingredientes frescos</span>
-      <span>ATH Móvil</span>
-      <span>Envío o recogido</span>
-      <span>Personalización</span>
-    </div>
-  </section>
+/* BODY */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f7f7f5;
+  color: #333;
+}
 
-  <!-- NUESTROS FAVORITOS -->
-  <section id="jugos" class="products-section">
-    <h2>Nuestros favoritos</h2>
-    <p class="section-subtitle">Los favoritos de la casa, hechos para sentirte bien.</p>
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
 
-    <div class="products-grid">
-      <div class="product-card">
-        <img src="glow-verde.png" alt="Glow Verde" />
-        <h3>Glow Verde</h3>
-        <p class="price">$7</p>
-        <p>Refrescante y ligero.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Glow%20Verde"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
 
-      <div class="product-card">
-        <img src="golden-boost.png" alt="Golden Boost" />
-        <h3>Golden Boost</h3>
-        <p class="price">$8</p>
-        <p>Energía natural.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Golden%20Boost"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
 
-      <div class="product-card">
-        <img src="berry-power.png" alt="Berry Power" />
-        <h3>Berry Power</h3>
-        <p class="price">$8</p>
-        <p>Antioxidantes.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Berry%20Power"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
+.hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
 
-      <div class="product-card">
-        <img src="tropical.png" alt="Tropical" />
-        <h3>Tropical</h3>
-        <p class="price">$7</p>
-        <p>Suave y refrescante.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20Tropical"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
-    </div>
-  </section>
+.hero-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  <!-- CAJAS -->
-  <section id="cajas" class="boxes-section">
-    <h2>Elige tu ritual</h2>
-    <p class="section-subtitle">
-      Escoge la opción que mejor vaya contigo y con tu rutina.
-    </p>
+.hero-features span {
+  background: #e6efe9;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
 
-    <div class="boxes-grid">
-      <div class="box-card">
-        <img src="kit-descubrimiento.png" alt="Kit Descubrimiento" />
-        <h3>Kit Descubrimiento</h3>
-        <p class="price">4 jugos</p>
-        <p>Ideal para probar sabores y descubrir tus favoritos.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20el%20Kit%20Descubrimiento"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
+/* SECTIONS */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
 
-      <div class="box-card">
-        <img src="ritual-semanal.png" alt="Ritual Semanal" />
-        <h3>Ritual Semanal</h3>
-        <p class="price">7 jugos</p>
-        <p>Perfecto para acompañarte durante toda la semana.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20el%20Ritual%20Semanal"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
+.section-subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
 
-      <div class="box-card">
-        <img src="ritual-profundo.png" alt="Ritual Profundo" />
-        <h3>Ritual Profundo</h3>
-        <p class="price">14 jugos</p>
-        <p>Una opción más completa para mantener tu ritmo de bienestar.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20el%20Ritual%20Profundo"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
+/* GRID (PRODUCTOS Y CAJAS) */
+.products-grid,
+.boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
 
-      <div class="box-card">
-        <img src="transformacion-total.png" alt="Transformación Total" />
-        <h3>Transformación Total</h3>
-        <p class="price">30 jugos</p>
-        <p>Tu rutina completa para disfrutar La Poción por más tiempo.</p>
-        <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20la%20Transformaci%C3%B3n%20Total"
-           target="_blank" class="btn-secondary">Ordenar</a>
-      </div>
-    </div>
-  </section>
+/* CARDS */
+.product-card,
+.box-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
 
-  <!-- CREA TU PROPIO JUGO -->
-  <section id="custom-juice" class="custom-section">
-    <h2>Crea tu propio jugo</h2>
-    <p class="section-subtitle">
-      Escoge tus ingredientes favoritos.
-    </p>
+.product-card:hover,
+.box-card:hover {
+  transform: translateY(-5px);
+}
 
-    <div class="ingredients-list">
-      <span>Manzana verde</span>
-      <span>Piña</span>
-      <span>Jengibre</span>
-      <span>Cúrcuma</span>
-      <span>Zanahoria</span>
-      <span>Remolacha</span>
-      <span>Espinaca</span>
-      <span>Fresas</span>
-      <span>Mango</span>
-    </div>
+/* IMÁGENES (AQUÍ ESTÁ EL FIX IMPORTANTE) */
+.product-card img,
+.box-card img {
+  width: 100%;
+  max-width: 140px; /* 👈 tamaño perfecto */
+  height: auto;
+  margin: 0 auto 15px;
+  display: block;
+}
 
-    <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20crear%20mi%20propio%20jugo"
-       target="_blank" class="btn-primary">
-      Crear mi jugo
-    </a>
-  </section>
+/* TEXTOS */
+.product-card h3,
+.box-card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
 
-  <!-- CTA FINAL -->
-  <section class="final-cta">
-    <h2>¿Lista para ordenar?</h2>
-    <p>Escríbenos por WhatsApp y te ayudamos a escoger.</p>
-    <a href="https://wa.me/17874226548?text=Hola%2C%20quiero%20ordenar%20jugos%20de%20La%20Poción"
-       target="_blank" class="btn-primary">
-      Ordenar por WhatsApp
-    </a>
-  </section>
-</main>
+.price {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* BOTONES */
+.btn-primary {
+  display: inline-block;
+  margin-top: 15px;
+  background: #6a8f7b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 10px;
+  background: #e6efe9;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* INGREDIENTES */
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.ingredients-list span {
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* CTA FINAL */
+.final-cta {
+  background: #6a8f7b;
+  color: white;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 30px 20px;
+}
