@@ -14,8 +14,10 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f8f6f1, #eef4ec);
-      color: #2f3a33;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.75), transparent 35%),
+        linear-gradient(to bottom, #fdf8f5 0%, #f6efe8 28%, #eef5ee 65%, #e7f0e8 100%);
+      color: #3b3b3b;
       line-height: 1.5;
     }
 
@@ -38,48 +40,69 @@
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #26352d;
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      color: #5a4d4d;
     }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 10px;
-      color: #2d4035;
+      color: #58715f;
+      text-align: center;
     }
 
     h3 {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       margin-bottom: 6px;
+      color: #5f5551;
     }
 
     p {
       font-size: 1rem;
-      color: #55635b;
+      color: #6b6763;
     }
 
     .section-subtitle {
-      max-width: 640px;
+      max-width: 650px;
       margin: 0 auto 30px;
-      color: #6a766f;
+      color: #7a746e;
+      text-align: center;
     }
 
     /* HERO */
     .hero {
       text-align: center;
-      padding: 80px 20px 60px;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.7), transparent 60%);
+      padding: 85px 20px 70px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35), transparent 22%),
+                  radial-gradient(circle at 80% 30%, rgba(255,255,255,0.22), transparent 18%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .logo {
-      width: 115px;
+      width: 120px;
       margin-bottom: 20px;
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+      filter: drop-shadow(0 10px 18px rgba(100, 120, 100, 0.12));
+    }
+
+    .hero h1 {
+      text-shadow: 0 2px 10px rgba(255,255,255,0.45);
     }
 
     .hero p {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
       font-size: 1.05rem;
     }
@@ -96,26 +119,26 @@
     /* CARDS */
     .product-card,
     .box-card {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(130, 150, 135, 0.12);
-      border-radius: 26px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(196, 211, 198, 0.55);
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
       padding: 26px 20px 24px;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(75, 96, 82, 0.10);
+      box-shadow: 0 14px 30px rgba(110, 130, 115, 0.10);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .product-card:hover,
     .box-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 34px rgba(75, 96, 82, 0.14);
+      box-shadow: 0 18px 36px rgba(110, 130, 115, 0.15);
     }
 
     .product-card img,
     .box-card img {
       width: 100%;
-      max-width: 115px;
+      max-width: 112px;
       height: auto;
       display: block;
       margin: 0 auto 16px;
@@ -123,13 +146,13 @@
 
     .price {
       font-weight: 700;
-      color: #56705e;
+      color: #7d9b7f;
       margin-bottom: 8px;
     }
 
     .product-card p:last-of-type,
     .box-card p:last-of-type {
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       min-height: 44px;
     }
 
@@ -147,34 +170,35 @@
     }
 
     .btn-primary {
-      background: #6f8f79;
+      background: linear-gradient(135deg, #8cab8d, #739276);
       color: white;
-      box-shadow: 0 10px 20px rgba(111, 143, 121, 0.22);
+      box-shadow: 0 10px 20px rgba(123, 154, 126, 0.22);
     }
 
     .btn-primary:hover {
-      background: #62806b;
       transform: translateY(-1px);
+      background: linear-gradient(135deg, #7fa182, #68886c);
     }
 
     .btn-secondary {
-      background: #edf3ee;
-      color: #385041;
+      background: #f4eee8;
+      color: #5f5954;
       margin-top: 12px;
+      border: 1px solid rgba(199, 188, 180, 0.45);
     }
 
     .btn-secondary:hover {
-      background: #e0ebe3;
+      background: #efe6df;
     }
 
     .btn-outline {
       background: transparent;
-      color: #6f8f79;
-      border: 1px solid #6f8f79;
+      color: #739276;
+      border: 1px solid #739276;
     }
 
     .btn-outline:hover {
-      background: rgba(111, 143, 121, 0.08);
+      background: rgba(115, 146, 118, 0.08);
     }
 
     /* CUSTOM JUICE */
@@ -188,13 +212,13 @@
       justify-content: center;
       gap: 12px;
       margin: 28px auto 0;
-      max-width: 850px;
+      max-width: 870px;
     }
 
     .ingredients-list span {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(130, 150, 135, 0.14);
-      color: #4e5f55;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(202, 214, 203, 0.65);
+      color: #617262;
       padding: 10px 16px;
       border-radius: 999px;
       font-size: 0.92rem;
@@ -212,18 +236,20 @@
     /* FINAL CTA */
     .final-cta-wrap {
       padding-top: 10px;
-      padding-bottom: 80px;
+      padding-bottom: 85px;
     }
 
     .final-cta {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
-      background: linear-gradient(135deg, #6f8f79, #88a08c);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04)),
+        linear-gradient(135deg, #8ba98a, #6f8f79, #90a997);
       color: white;
-      border-radius: 30px;
+      border-radius: 34px;
       text-align: center;
-      padding: 50px 24px;
-      box-shadow: 0 20px 40px rgba(88, 117, 97, 0.20);
+      padding: 52px 24px;
+      box-shadow: 0 20px 40px rgba(107, 137, 112, 0.22);
     }
 
     .final-cta h2 {
@@ -232,19 +258,19 @@
     }
 
     .final-cta p {
-      color: rgba(255,255,255,0.9);
-      max-width: 520px;
+      color: rgba(255,255,255,0.92);
+      max-width: 540px;
       margin: 0 auto 20px;
     }
 
     .final-cta .btn-primary {
-      background: white;
-      color: #5e7b67;
+      background: #fff7f2;
+      color: #6d8a72;
       box-shadow: none;
     }
 
     .final-cta .btn-primary:hover {
-      background: #f3f7f4;
+      background: #fff;
     }
 
     @media (max-width: 768px) {
@@ -267,7 +293,7 @@
 
       .product-card img,
       .box-card img {
-        max-width: 100px;
+        max-width: 98px;
       }
     }
   </style>
@@ -281,7 +307,7 @@
         <img src="logo.png" alt="La Poción logo" class="logo" />
         <h1>Jugos que se sienten bien</h1>
         <p>
-          La magia está en los ingredientes. Jugos frescos, funcionales y hechos para acompañar tu bienestar de una forma rica, ligera y especial.
+          La magia está en los ingredientes. Jugos frescos, funcionales y hechos para acompañar tu bienestar de una forma rica, delicada y especial.
         </p>
       </div>
     </section>
@@ -291,7 +317,7 @@
       <div class="container">
         <h2>Nuestros favoritos</h2>
         <p class="section-subtitle">
-          Los favoritos de la casa, pensados para sentirte bien y disfrutar cada sorbo.
+          Los favoritos de la casa, pensados para sentirte bien y disfrutar cada sorbo con un toque natural.
         </p>
 
         <div class="products-grid">
